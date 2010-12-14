@@ -1,0 +1,10 @@
+#!/bin/bash
+clear
+site=`echo $1 | sed -e "s/\///g"`
+type=rewrite
+#log format
+#  accesslog  : /var/log/apache2/[sitename]/[year]/[month]/access.[year].[month].[day].log
+#  errorlog   : /var/log/apache2/[sitename]/[year]/[month]/error.[year].[month].[day].log
+#  rewritelog : /var/log/apache2/[sitename]/[year]/[month]/rewrite.[year].[month].[day].log
+tail -f /var/log/apache2/*$site*/*/*/$type*log
+
