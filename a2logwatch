@@ -7,4 +7,3 @@ type=`echo $2 | sed -e "s/\///g"`
 #  errorlog   : /var/log/apache2/[sitename]/error.[year].[month].[day].log
 #  rewritelog : /var/log/apache2/[sitename]/rewrite.[year].[month].[day].log
 tail -f /var/log/apache2/*$site*/$type*log
-
