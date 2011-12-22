@@ -1,0 +1,10 @@
+#!/bin/bash
+#log format
+#  accesslog  : /var/log/nginx/[sitename].access.log
+#  errorlog   : /var/log/nginx/[sitename].error.log
+
+site=`echo $1 | sed -e "s/\///g"`
+type=error
+
+clear
+tail -f /var/log/nginx/*$site*$type*.log
