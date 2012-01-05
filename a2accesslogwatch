@@ -1,14 +1,11 @@
 #!/bin/bash
 #log format
-#  accesslog  : /var/log/apache2/[sitename]/access.[year].[month].[day].log
-#  errorlog   : /var/log/apache2/[sitename]/error.[year].[month].[day].log
-#  rewritelog : /var/log/apache2/[sitename]/rewrite.[year].[month].[day].log
+#  accesslog  : /var/log/apache2/[sitename].access.log
+#  errorlog   : /var/log/apache2/[sitename].error.log
+#  rewritelog : /var/log/apache2/[sitename].rewrite.log
 
 site=`echo $1 | sed -e "s/\///g"`
 type=access
-year=`date +%Y`
-month=`date +%m`
-day=`date +%d`
 
 clear
-tail -f /var/log/apache2/*$site*/*$type*.$year.$month.$day.log
+tail -f /var/log/apache2/*$site**$type*.log
